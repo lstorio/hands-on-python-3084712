@@ -28,7 +28,8 @@ def laureate_list():
     for laureate in laureates:
         surname = laureate["surname"].lower()
         # your code here
-        if search_string in surname:
+        fname = laureate["name"].lower()
+        if (search_string in surname) or (search_string in fname):
             results.append(laureate)
 
     return jsonify(results)
